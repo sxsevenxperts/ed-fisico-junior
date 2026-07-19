@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prof. Dr. Luiz Júnior — Método APEE Fitness®</title>
+<meta name="description" content="Consultoria, palestras e mentoria para academias, equipes e profissionais de Educação Física.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0C08;
+    --bg-2:#14170F;
+    --ink:#F2F1EA;
+    --ink-dim:#8C9182;
+    --brass:#C8A24A;
+    --line:#242821;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(circle at 50% -10%, #1B1F14 0%, var(--bg) 55%);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:48px 18px 40px;
+  }
+  .wrap{ width:100%; max-width:420px; }
+
+  .eyebrow{
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    font-size:11px; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--ink-dim);
+    margin-bottom:28px;
+  }
+  .eyebrow .bar{ width:16px; height:1px; background:var(--brass); }
+
+  .identity{ text-align:center; margin-bottom:22px; }
+  .avatar{
+    width:104px; height:104px; border-radius:50%;
+    margin:0 auto 18px;
+    border:2px solid var(--brass);
+    padding:3px;
+  }
+  .avatar img{ width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; }
+  h1{
+    font-family:'Bebas Neue', sans-serif;
+    font-size:34px;
+    letter-spacing:.03em;
+    line-height:1;
+  }
+  .role{
+    font-size:12px; color:var(--brass);
+    letter-spacing:.05em;
+    margin-top:8px;
+    text-transform:uppercase;
+  }
+  .bio{
+    font-size:12.5px; line-height:1.65; color:var(--ink-dim);
+    max-width:330px; margin:16px auto 0;
+  }
+
+  /* video — signature element */
+  .video-frame{
+    position:relative;
+    border-radius:18px;
+    overflow:hidden;
+    border:1px solid var(--line);
+    margin:28px 0 26px;
+    aspect-ratio:1080/1350;
+    background:#000;
+  }
+  .video-frame video{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+  .video-tag{
+    position:absolute; top:12px; left:12px;
+    background:rgba(10,12,8,.7);
+    border:1px solid var(--brass);
+    color:var(--brass);
+    font-size:10px; letter-spacing:.08em; text-transform:uppercase;
+    padding:5px 10px; border-radius:100px;
+    backdrop-filter:blur(4px);
+  }
+
+  .section-label{
+    font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    color:var(--ink-dim);
+    margin:26px 0 12px 2px;
+  }
+
+  .links{ display:flex; flex-direction:column; gap:11px; }
+  a.link{
+    display:flex; align-items:center; justify-content:space-between;
+    text-decoration:none; color:var(--ink);
+    border:1px solid var(--line);
+    background:var(--bg-2);
+    border-radius:14px;
+    padding:16px 18px;
+    transition:border-color .2s ease, transform .15s ease, background .2s ease;
+  }
+  a.link:hover{ border-color:var(--brass); transform:translateY(-2px); background:#191D12; }
+  a.link .txt{ display:flex; flex-direction:column; gap:3px; }
+  a.link .ttl{ font-size:13.5px; font-weight:600; }
+  a.link .sub{ font-size:10.5px; color:var(--ink-dim); }
+  a.link .arrow{ color:var(--brass); font-size:16px; margin-left:12px; flex-shrink:0; }
+  a.link.primary{ border-color:var(--brass); background:linear-gradient(180deg,#1C1809,#14170F); }
+
+  .method{
+    margin-top:30px;
+    text-align:center;
+    padding:16px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .method .m-label{ font-size:10px; letter-spacing:.1em; color:var(--ink-dim); text-transform:uppercase; }
+  .method .m-name{ font-family:'Bebas Neue', sans-serif; font-size:20px; letter-spacing:.04em; color:var(--brass); margin-top:4px; }
+
+  footer{
+    text-align:center; margin-top:32px;
+    font-size:10px; color:#54584B; letter-spacing:.06em;
+  }
+  footer span{ color:var(--brass); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="eyebrow"><span class="bar"></span> CONSULTOR · PALESTRANTE · MENTOR <span class="bar"></span></div>
+
+  <div class="identity">
+    <div class="avatar"><img src="avatar.png" alt="Prof. Dr. Luiz Júnior"></div>
+    <h1>PROF. DR. LUIZ JÚNIOR</h1>
+    <div class="role">Consultoria em Educação Física Aplicada</div>
+    <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas. Consultoria, palestras corporativas e mentoria com o Método APEE Fitness®.</p>
+  </div>
+
+  <div class="video-frame">
+    <span class="video-tag">● Apresentação</span>
+    <video src="profluiz-video.mp4" autoplay loop muted playsinline controls preload="auto"></video>
+  </div>
+
+  <div class="section-label">Fale com o time</div>
+  <div class="links">
+    <a class="link primary" href="https://wa.me/5588999625027?text=Ol%C3%A1%2C%20quero%20falar%20com%20o%20especialista." target="_blank" rel="noopener">
+      <span class="txt"><span class="ttl">Fale com o Especialista</span><span class="sub">Atendimento direto via WhatsApp</span></span>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="link" href="https://drluizjr.sevenxperts.solutiona" target="_blank" rel="noopener">
+      <span class="txt"><span class="ttl">Site oficial</span><span class="sub">Consultoria, palestras e mentoria</span></span>
+      <span class="arrow">↗</span>
+    </a>
+    <a class="link" href="https://instagram.com/profluizcjunior" target="_blank" rel="noopener">
+      <span class="txt"><span class="ttl">Instagram</span><span class="sub">@profluizcjunior · 23,3 mil seguidores</span></span>
+      <span class="arrow">↗</span>
+    </a>
+  </div>
+
+  <div class="method">
+    <div class="m-label">Mecanismo central</div>
+    <div class="m-name">MÉTODO APEE FITNESS®</div>
+  </div>
+
+  <footer>EDUCAÇÃO FÍSICA APLICADA COM MÉTODO — <span>LJ</span></footer>
+</div>
+</body>
+</html>
