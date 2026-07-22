@@ -92,22 +92,75 @@
     margin:26px 0 12px 2px;
   }
 
-  .links{ display:flex; flex-direction:column; gap:11px; }
+  .links{ display:flex; flex-direction:column; gap:12px; }
   a.link{
     display:flex; align-items:center; justify-content:space-between;
     text-decoration:none; color:var(--ink);
     border:1px solid var(--line);
     background:var(--bg-2);
-    border-radius:14px;
-    padding:16px 18px;
-    transition:border-color .2s ease, transform .15s ease, background .2s ease;
+    border-radius:16px;
+    padding:18px 20px;
+    backdrop-filter:blur(10px);
+    box-shadow:0 8px 32px rgba(0,0,0,.3);
+    transition:all .3s cubic-bezier(0.23, 1, 0.320, 1);
+    position:relative;
+    overflow:hidden;
   }
-  a.link:hover{ border-color:var(--brass); transform:translateY(-2px); background:#191D12; }
-  a.link .txt{ display:flex; flex-direction:column; gap:3px; }
-  a.link .ttl{ font-size:13.5px; font-weight:600; }
-  a.link .sub{ font-size:10.5px; color:var(--ink-dim); }
-  a.link .arrow{ color:var(--brass); font-size:16px; margin-left:12px; flex-shrink:0; }
-  a.link.primary{ border-color:var(--brass); background:linear-gradient(180deg,#1C1809,#14170F); }
+  a.link::before{
+    content:'';
+    position:absolute;
+    top:0; left:-100%;
+    width:100%; height:100%;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,.1), transparent);
+    transition:left .5s ease;
+  }
+  a.link:hover{
+    transform:translateY(-6px);
+    border-color:var(--brass);
+    background:linear-gradient(135deg, #1C1809, #14170F);
+    box-shadow:0 16px 48px rgba(200,162,90,.15);
+  }
+  a.link:hover::before{ left:100%; }
+  
+  a.link .icon{
+    width:52px; height:52px;
+    border-radius:12px;
+    background:rgba(200,162,90,.08);
+    border:1px solid rgba(200,162,90,.2);
+    display:flex; align-items:center; justify-content:center;
+    font-size:24px;
+    flex-shrink:0;
+    margin-right:14px;
+  }
+  a.link .txt{ display:flex; flex-direction:column; gap:4px; flex:1; }
+  a.link .ttl{ font-size:14px; font-weight:600; }
+  a.link .sub{ font-size:11px; color:var(--ink-dim); }
+  a.link .arrow{ color:var(--brass); font-size:18px; margin-left:auto; flex-shrink:0; }
+  
+  a.link.primary{ 
+    border-color:var(--brass); 
+    background:linear-gradient(135deg,rgba(200,162,90,.15),rgba(200,162,90,.05));
+    box-shadow:0 8px 32px rgba(200,162,90,.2);
+  }
+  a.link.primary:hover{
+    box-shadow:0 20px 60px rgba(200,162,90,.3);
+  }
+
+  /* ANIMAÇÃO FAROL NO ÚLTIMO BOTÃO */
+  a.link:last-child{
+    animation:beacon-pulse 2s ease-in-out infinite;
+  }
+  a.link:last-child .icon{
+    animation:beacon-light 2s ease-in-out infinite;
+  }
+  @keyframes beacon-pulse{
+    0%, 100%{ box-shadow:0 8px 32px rgba(0,0,0,.3), 0 0 0 0 rgba(200,162,90,.4); }
+    50%{ box-shadow:0 8px 32px rgba(0,0,0,.3), 0 0 0 12px rgba(200,162,90,0); }
+  }
+  @keyframes beacon-light{
+    0%, 100%{ background:rgba(200,162,90,.08); box-shadow:inset 0 0 0 0 rgba(200,162,90,.3); }
+    50%{ background:rgba(200,162,90,.15); box-shadow:inset 0 0 8px 2px rgba(200,162,90,.2); }
+  }
 
   .method{
     margin-top:30px;
@@ -146,14 +199,17 @@
   <div class="section-label">Fale com o time</div>
   <div class="links">
     <a class="link primary" href="https://wa.me/5588999625027?text=Ol%C3%A1%2C%20quero%20falar%20com%20o%20especialista." target="_blank" rel="noopener">
+      <span class="icon">💬</span>
       <span class="txt"><span class="ttl">Fale com o Especialista</span><span class="sub">Atendimento direto via WhatsApp</span></span>
       <span class="arrow">↗</span>
     </a>
     <a class="link" href="https://drluizjr.sevenxperts.solutiona" target="_blank" rel="noopener">
+      <span class="icon">🌐</span>
       <span class="txt"><span class="ttl">Site oficial</span><span class="sub">Consultoria, palestras e mentoria</span></span>
       <span class="arrow">↗</span>
     </a>
     <a class="link" href="https://instagram.com/profluizcjunior" target="_blank" rel="noopener">
+      <span class="icon">📸</span>
       <span class="txt"><span class="ttl">Instagram</span><span class="sub">@profluizcjunior · 23,3 mil seguidores</span></span>
       <span class="arrow">↗</span>
     </a>
