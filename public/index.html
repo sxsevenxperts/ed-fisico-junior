@@ -35,7 +35,7 @@
   }
   .eyebrow .bar{ width:16px; height:1px; background:var(--brass); }
 
-  /* 2. HERO VIDEO — vídeo como background */
+  /* 2. HERO — foto grande como background */
   .hero{
     position:relative;
     width:100%;
@@ -46,7 +46,7 @@
     margin-bottom:32px;
     border:1px solid var(--line);
   }
-  .hero video{
+  .hero img{
     width:100%; height:100%; object-fit:cover; display:block;
   }
   .hero::after{
@@ -57,58 +57,32 @@
     pointer-events:none;
   }
 
-  /* 3. HERO CARD — DENTRO DO VÍDEO, na parte inferior -->
+  /* 3. HERO CARD — embaixo do hero, card separado com nome/cargo -->
   .hero-card{
-    position:absolute;
-    bottom:40px;
-    left:0;
-    right:0;
     background:transparent;
-    padding:0 20px;
+    padding:0;
     text-align:center;
-    z-index:2;
-    margin-bottom:0;
+    margin-bottom:32px;
   }
 
-  /* Card com nome e cargo */
+  /* Card com nome e cargo — embaixo do hero */
   .name-card{
-    background:rgba(20,23,15,.6);
+    background:rgba(20,23,15,.7);
     border:1px solid rgba(200,162,90,.3);
-    border-radius:24px;
-    padding:40px 32px;
+    border-radius:20px;
+    padding:32px 28px;
     backdrop-filter:blur(16px);
-    box-shadow:0 16px 48px rgba(0,0,0,.4);
-    margin-bottom:28px;
-    text-align:center;
-  }
-
-  /* 4. FOTO — dentro do card */
-  .avatar{
-    width:0; 
-    height:0;
-    display:none;
-  }
-
-  .name-card .avatar-circle{
-    width:160px; height:160px;
-    border-radius:50%;
-    margin:0 auto 28px;
-    border:4px solid var(--brass);
-    overflow:hidden;
-    box-shadow:0 20px 60px rgba(200,162,90,.4);
-    background:#000;
-  }
-  .name-card .avatar-circle img{
-    width:100%; height:100%; object-fit:cover; display:block;
+    box-shadow:0 12px 40px rgba(0,0,0,.4);
+    margin-bottom:0;
   }
 
   h1{
     font-family:'Bebas Neue', sans-serif;
-    font-size:48px;
+    font-size:46px;
     letter-spacing:.04em;
     line-height:1.1;
     color:#FFF;
-    margin-bottom:20px;
+    margin-bottom:8px;
     font-weight:700;
   }
 
@@ -117,7 +91,7 @@
     width:48px;
     height:2.5px;
     background:linear-gradient(90deg, rgba(200,162,90,0), var(--brass), rgba(200,162,90,0));
-    margin:20px auto;
+    margin:12px auto 12px;
   }
 
   /* 5. CARGO + MÉTODO */
@@ -125,7 +99,7 @@
     font-size:11px; color:var(--ink-dim);
     letter-spacing:.1em;
     text-transform:uppercase;
-    margin-bottom:12px;
+    margin-bottom:0;
     line-height:1.8;
   }
 
@@ -255,22 +229,20 @@
   <!-- 1. EYEBROW -->
   <div class="eyebrow"><span class="bar"></span> CONSULTOR · PALESTRANTE · MENTOR <span class="bar"></span></div>
 
-  <!-- 2. VÍDEO COMO HERO COM OVERLAY GRADIENTE + CARD DENTRO -->
+  <!-- 2. HERO — FOTO GRANDE COMO BACKGROUND -->
   <div class="hero">
-    <video src="profluiz-video.mp4" autoplay loop muted playsinline preload="auto"></video>
-    
-    <!-- 3. HERO CARD — foto + nome + cargo + bio (DENTRO DO VÍDEO, na parte inferior) -->
-    <div class="hero-card">
-      <!-- CARD COM NOME E CARGO -->
-      <div class="name-card">
-        <div class="avatar-circle"><img src="avatar.png" alt="Prof. Dr. Luiz Júnior"></div>
-        <h1>DR. LUIZ JÚNIOR</h1>
-        <div class="name-divider"></div>
-        <div class="role">CONSULTORIA EM EDUCAÇÃO FÍSICA APLICADA<br><span class="method-badge">| MÉTODO APEE FITNESS® |</span></div>
-      </div>
-      <!-- BIO EMBAIXO DO CARD, AINDA DENTRO DO HERO -->
-      <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas com o Método APEE Fitness®. Consultoria, palestras corporativas e mentoria.</p>
+    <img src="avatar.png" alt="Prof. Dr. Luiz Júnior">
+  </div>
+
+  <!-- 3. CARD COM NOME E CARGO — EMBAIXO DO HERO -->
+  <div class="hero-card">
+    <div class="name-card">
+      <h1>DR. LUIZ JÚNIOR</h1>
+      <div class="name-divider"></div>
+      <div class="role">CONSULTORIA EM EDUCAÇÃO FÍSICA APLICADA<br><span class="method-badge">| MÉTODO APEE FITNESS® |</span></div>
     </div>
+    <!-- BIO EMBAIXO -->
+    <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas com o Método APEE Fitness®. Consultoria, palestras corporativas e mentoria.</p>
   </div>
 
   <!-- 7. ÁREA DOS BOTÕES -->
