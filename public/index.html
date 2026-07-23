@@ -19,105 +19,101 @@
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    background:radial-gradient(circle at 50% -10%, #1B1F14 0%, var(--bg) 55%);
+    background:var(--bg);
     color:var(--ink);
     font-family:'Inter', sans-serif;
     min-height:100vh;
-    display:flex;
-    justify-content:center;
-    padding:40px 18px;
   }
-  .wrap{ width:100%; max-width:420px; }
+  .wrap{ width:100%; max-width:420px; margin:0 auto; }
 
   /* 1. EYEBROW */
   .eyebrow{
     display:flex; align-items:center; justify-content:center; gap:8px;
     font-size:11px; letter-spacing:.12em; text-transform:uppercase;
     color:var(--ink-dim);
-    margin-bottom:28px;
+    padding:40px 18px 24px;
   }
   .eyebrow .bar{ width:16px; height:1px; background:var(--brass); }
 
-  /* 2. VÍDEO */
-  .video-frame{
+  /* 2. HERO VIDEO — vídeo como background */
+  .hero{
     position:relative;
-    border-radius:18px;
-    overflow:hidden;
-    border:1px solid var(--line);
-    margin-bottom:36px;
+    width:100%;
     aspect-ratio:1080/1350;
+    overflow:hidden;
     background:#000;
   }
-  .video-frame video{
+  .hero video{
     width:100%; height:100%; object-fit:cover; display:block;
   }
-  .video-tag{
-    position:absolute; top:12px; left:12px;
-    background:rgba(10,12,8,.7);
-    border:1px solid var(--brass);
-    color:var(--brass);
-    font-size:10px; letter-spacing:.08em; text-transform:uppercase;
-    padding:5px 10px; border-radius:100px;
-    backdrop-filter:blur(4px);
+  .hero::after{
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    background:linear-gradient(180deg, rgba(10,12,8,0) 0%, rgba(10,12,8,.4) 45%, rgba(10,12,8,1) 100%);
+    pointer-events:none;
   }
 
-  /* 3. HERO CARD (tipo Michel) */
+  /* 3. HERO CARD — overlay na vertical */
   .hero-card{
-    background:rgba(20,23,15,.9);
-    border:1px solid rgba(200,162,90,.25);
-    border-radius:22px;
-    backdrop-filter:blur(14px);
-    padding:36px 28px;
+    position:absolute;
+    bottom:0; left:0; right:0;
+    background:transparent;
+    padding:0 18px 60px;
     text-align:center;
-    box-shadow:0 20px 60px rgba(0,0,0,.4);
-    margin-bottom:32px;
+    z-index:2;
   }
 
-  .hero-accent{
-    font-size:9px; letter-spacing:.16em; color:var(--brass);
-    text-transform:uppercase;
-    margin-bottom:16px;
+  /* 4. FOTO + NOME */
+  .avatar{
+    width:100px; height:100px;
+    border-radius:50%;
+    margin:0 auto 24px;
+    border:3px solid var(--brass);
+    overflow:hidden;
+    box-shadow:0 12px 40px rgba(200,162,90,.2);
   }
+  .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
 
-  /* 4. NOME */
   h1{
     font-family:'Bebas Neue', sans-serif;
-    font-size:48px;
-    letter-spacing:.02em;
+    font-size:44px;
+    letter-spacing:.01em;
     line-height:1.1;
-    color:#FFF;
-    text-shadow:0 4px 12px rgba(0,0,0,.5);
-    margin-bottom:16px;
-  }
-
-  .hero-divider{
-    width:40px;
-    height:2px;
-    background:var(--brass);
-    margin:0 auto 16px;
+    background:linear-gradient(180deg, #F2F1EA 0%, #C8A24A 50%, #8C9182 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    margin-bottom:12px;
+    text-shadow:0 2px 8px rgba(0,0,0,.4);
   }
 
   /* 5. CARGO */
-  .hero-role{
-    font-size:11px; color:var(--brass);
-    letter-spacing:.08em;
+  .role{
+    font-size:12px; color:var(--brass);
+    letter-spacing:.06em;
     text-transform:uppercase;
-    margin-bottom:16px;
+    margin-bottom:20px;
   }
 
   /* 6. BIO */
-  .hero-bio{
-    font-size:12.5px; line-height:1.7; color:var(--ink-dim);
-    text-align:center;
+  .bio{
+    font-size:12px; line-height:1.7; color:var(--ink);
+    max-width:340px; margin:0 auto;
+  }
+
+  /* SEÇÃO EMBAIXO DO HERO */
+  .content{
+    padding:0 18px 40px;
   }
 
   .section-label{
-    font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+    font-size:10px; letter-spacing:.12em; text-transform:uppercase;
     color:var(--ink-dim);
-    margin:28px 0 14px 2px;
+    margin:36px 0 18px;
   }
 
-  /* 7. BOTÕES COM ÍCONE E FAROL */
+  /* CARDS DOS BOTÕES — estilo Michel */
   .links{ display:flex; flex-direction:column; gap:12px; }
   a.link{
     display:flex; align-items:center; justify-content:space-between;
@@ -188,55 +184,73 @@
     50%{ background:rgba(200,162,90,.15); box-shadow:inset 0 0 8px 2px rgba(200,162,90,.2); }
   }
 
+  .method{
+    margin-top:36px;
+    text-align:center;
+    padding:20px;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .method .m-label{ font-size:10px; letter-spacing:.1em; color:var(--ink-dim); text-transform:uppercase; }
+  .method .m-name{ font-family:'Bebas Neue', sans-serif; font-size:20px; letter-spacing:.04em; color:var(--brass); margin-top:6px; }
+
   footer{
-    text-align:center; margin-top:32px;
+    text-align:center; padding:32px 18px; 
     font-size:10px; color:#54584B; letter-spacing:.06em;
   }
   footer span{ color:var(--brass); }
 </style>
 </head>
 <body>
+
 <div class="wrap">
 
   <!-- 1. EYEBROW -->
   <div class="eyebrow"><span class="bar"></span> CONSULTOR · PALESTRANTE · MENTOR <span class="bar"></span></div>
 
-  <!-- 2. VÍDEO -->
-  <div class="video-frame">
-    <span class="video-tag">● Apresentação</span>
-    <video src="profluiz-video.mp4" autoplay loop muted playsinline controls preload="auto"></video>
+  <!-- 2. VÍDEO COMO HERO COM OVERLAY GRADIENTE -->
+  <div class="hero">
+    <video src="profluiz-video.mp4" autoplay loop muted playsinline preload="auto"></video>
+    
+    <!-- 3. HERO CARD — foto + nome + cargo + bio -->
+    <div class="hero-card">
+      <div class="avatar"><img src="avatar.png" alt="Prof. Dr. Luiz Júnior"></div>
+      <h1>DR. LUIZ JÚNIOR</h1>
+      <div class="role">Consultoria em Educação Física Aplicada</div>
+      <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas. Consultoria, palestras corporativas e mentoria com o Método APEE Fitness®.</p>
+    </div>
   </div>
 
-  <!-- 3-6. HERO CARD COM NOME E BIO -->
-  <div class="hero-card">
-    <div class="hero-accent">// BIO OFICIAL</div>
-    <h1>DR. LUIZ JÚNIOR</h1>
-    <div class="hero-divider"></div>
-    <div class="hero-role">Consultoria em Educação Física Aplicada</div>
-    <p class="hero-bio">Transformo equipes de academias em máquinas de retenção e vendas. Consultoria, palestras corporativas e mentoria com o Método APEE Fitness®.</p>
+  <!-- 7. ÁREA DOS BOTÕES -->
+  <div class="content">
+    <div class="section-label">Fale com o time</div>
+    <div class="links">
+      <a class="link primary" href="https://wa.me/5588999625027?text=Ol%C3%A1%2C%20quero%20falar%20com%20o%20especialista." target="_blank" rel="noopener">
+        <span class="icon">💬</span>
+        <span class="txt"><span class="ttl">Fale com o Especialista</span><span class="sub">Atendimento direto via WhatsApp</span></span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="link" href="https://drluizjr.sevenxperts.solutiona" target="_blank" rel="noopener">
+        <span class="icon">🌐</span>
+        <span class="txt"><span class="ttl">Site oficial</span><span class="sub">Consultoria, palestras e mentoria</span></span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="link" href="https://instagram.com/profluizcjunior" target="_blank" rel="noopener">
+        <span class="icon">📸</span>
+        <span class="txt"><span class="ttl">Instagram</span><span class="sub">@profluizcjunior · 23,3 mil seguidores</span></span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+
+    <div class="method">
+      <div class="m-label">Mecanismo central</div>
+      <div class="m-name">MÉTODO APEE FITNESS®</div>
+    </div>
+
+    <footer>EDUCAÇÃO FÍSICA APLICADA COM MÉTODO — <span>LJ</span></footer>
   </div>
 
-  <!-- 7. BOTÕES -->
-  <div class="section-label">Fale com o time</div>
-  <div class="links">
-    <a class="link primary" href="https://wa.me/5588999625027?text=Ol%C3%A1%2C%20quero%20falar%20com%20o%20especialista." target="_blank" rel="noopener">
-      <span class="icon">💬</span>
-      <span class="txt"><span class="ttl">Fale com o Especialista</span><span class="sub">Atendimento direto via WhatsApp</span></span>
-      <span class="arrow">↗</span>
-    </a>
-    <a class="link" href="https://drluizjr.sevenxperts.solutiona" target="_blank" rel="noopener">
-      <span class="icon">🌐</span>
-      <span class="txt"><span class="ttl">Site oficial</span><span class="sub">Consultoria, palestras e mentoria</span></span>
-      <span class="arrow">↗</span>
-    </a>
-    <a class="link" href="https://instagram.com/profluizcjunior" target="_blank" rel="noopener">
-      <span class="icon">📸</span>
-      <span class="txt"><span class="ttl">Instagram</span><span class="sub">@profluizcjunior · 23,3 mil seguidores</span></span>
-      <span class="arrow">↗</span>
-    </a>
-  </div>
-
-  <footer>EDUCAÇÃO FÍSICA APLICADA COM MÉTODO — <span>LJ</span></footer>
 </div>
+
 </body>
 </html>
