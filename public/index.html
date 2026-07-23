@@ -6,7 +6,7 @@
 <title>Prof. Dr. Luiz Júnior — Método APEE Fitness®</title>
 <meta name="description" content="Consultoria, palestras e mentoria para academias, equipes e profissionais de Educação Física.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0A0C08;
@@ -67,54 +67,66 @@
 
   /* Card com nome e cargo — embaixo do hero */
   .name-card{
-    background:rgba(20,23,15,.7);
-    border:1px solid rgba(200,162,90,.3);
+    background:rgba(14,17,11,.75);
+    border:1px solid rgba(200,162,90,.2);
     border-radius:20px;
-    padding:32px 28px;
-    backdrop-filter:blur(16px);
-    box-shadow:0 12px 40px rgba(0,0,0,.4);
+    padding:36px 28px 28px;
+    backdrop-filter:blur(20px);
+    box-shadow:0 24px 64px rgba(0,0,0,.5), inset 0 1px 0 rgba(200,162,90,.1);
     margin-bottom:0;
+    text-align:center;
   }
 
   h1{
-    font-family:'Bebas Neue', sans-serif;
-    font-size:46px;
-    letter-spacing:.04em;
-    line-height:1.1;
-    color:#FFF;
-    margin-bottom:8px;
+    font-family:'Cormorant Garamond', serif;
+    font-size:52px;
     font-weight:700;
+    letter-spacing:.04em;
+    line-height:1;
+    text-align:center;
+    background:linear-gradient(135deg, #FFFFFF 0%, #E8DFC8 35%, #C8A24A 65%, #8C7A3A 100%);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    background-clip:text;
+    margin-bottom:0;
   }
 
   /* Divider premium */
   .name-divider{
     width:48px;
-    height:2.5px;
-    background:linear-gradient(90deg, rgba(200,162,90,0), var(--brass), rgba(200,162,90,0));
-    margin:12px auto 12px;
+    height:1.5px;
+    background:linear-gradient(90deg, transparent, var(--brass), transparent);
+    margin:16px auto;
   }
 
   /* 5. CARGO + MÉTODO */
   .role{
-    font-size:11px; color:var(--ink-dim);
-    letter-spacing:.1em;
+    font-family:'Inter', sans-serif;
+    font-size:10px;
+    font-weight:500;
+    color:var(--ink-dim);
+    letter-spacing:.14em;
     text-transform:uppercase;
     margin-bottom:0;
-    line-height:1.8;
+    line-height:2;
+    text-align:center;
   }
 
   .method-badge{
-    display:inline-block;
-    font-size:10px;
     color:var(--brass);
-    letter-spacing:.08em;
-    text-transform:uppercase;
+    font-weight:600;
+    letter-spacing:.1em;
   }
 
   /* 6. BIO */
   .bio{
-    font-size:12px; line-height:1.7; color:var(--ink);
-    max-width:340px; margin:0 auto;
+    font-family:'Inter', sans-serif;
+    font-size:13px;
+    font-weight:400;
+    line-height:1.8;
+    color:rgba(242,241,234,.75);
+    max-width:340px;
+    margin:20px auto 0;
     text-align:center;
   }
 
@@ -124,9 +136,11 @@
   }
 
   .section-label{
-    font-size:10px; letter-spacing:.12em; text-transform:uppercase;
+    font-family:'Inter', sans-serif;
+    font-size:10px; letter-spacing:.16em; text-transform:uppercase;
     color:var(--ink-dim);
     margin:36px 0 18px;
+    text-align:center;
   }
 
   /* CARDS DOS BOTÕES — estilo Michel */
@@ -241,7 +255,6 @@
       <div class="name-divider"></div>
       <div class="role">CONSULTORIA EM EDUCAÇÃO FÍSICA APLICADA<br><span class="method-badge">| MÉTODO APEE FITNESS® |</span></div>
     </div>
-    <!-- BIO EMBAIXO -->
     <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas com o Método APEE Fitness®. Consultoria, palestras corporativas e mentoria.</p>
   </div>
 
