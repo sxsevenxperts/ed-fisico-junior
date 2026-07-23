@@ -19,108 +19,118 @@
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    background:
-      radial-gradient(circle at 50% -10%, #1B1F14 0%, var(--bg) 55%);
+    background:radial-gradient(circle at 50% -10%, #1B1F14 0%, var(--bg) 55%);
     color:var(--ink);
     font-family:'Inter', sans-serif;
     min-height:100vh;
     display:flex;
     justify-content:center;
-    padding:48px 18px 40px;
+    padding:0 18px 40px;
   }
   .wrap{ width:100%; max-width:420px; }
 
+  /* EYEBROW ANTES DO HERO */
   .eyebrow{
     display:flex; align-items:center; justify-content:center; gap:8px;
     font-size:11px; letter-spacing:.12em; text-transform:uppercase;
     color:var(--ink-dim);
-    margin-bottom:32px;
+    margin:48px 0 24px;
   }
   .eyebrow .bar{ width:16px; height:1px; background:var(--brass); }
 
-  /* VÍDEO + HERO SOBREPOSTO */
-  .video-section{
+  /* HERO COM VÍDEO BACKGROUND */
+  .hero{
     position:relative;
-    margin-bottom:80px;
-  }
-  .video-frame{
-    position:relative;
-    border-radius:20px;
+    border-radius:28px;
     overflow:hidden;
-    border:1px solid var(--line);
+    margin-bottom:28px;
     aspect-ratio:1080/1350;
     background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:40px 20px;
   }
-  .video-frame video{
-    width:100%; height:100%; object-fit:cover; display:block;
-  }
-  .video-tag{
-    position:absolute; top:12px; left:12px;
-    background:rgba(10,12,8,.7);
-    border:1px solid var(--brass);
-    color:var(--brass);
-    font-size:10px; letter-spacing:.08em; text-transform:uppercase;
-    padding:5px 10px; border-radius:100px;
-    backdrop-filter:blur(4px);
-    z-index:2;
-  }
-
-  /* HERO CIRCULAR SOBREPOSTO */
-  .hero-overlay{
+  .hero video{
     position:absolute;
-    bottom:-60px; left:50%;
-    transform:translateX(-50%);
-    width:240px; height:240px;
-    border-radius:50%;
-    background:linear-gradient(180deg, rgba(20,23,15,.95), rgba(10,12,8,.98));
-    border:2px solid var(--line);
-    backdrop-filter:blur(12px);
-    box-shadow:0 24px 64px rgba(0,0,0,.5), inset 0 1px 32px rgba(200,162,90,.08);
-    display:flex; align-items:center; justify-content:center;
-    z-index:10;
+    inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(10,12,8,.3) 0%, rgba(10,12,8,.8) 100%);
+    z-index:1;
   }
 
-  .hero-content{
+  /* CARD IDENTIDADE DENTRO DO HERO */
+  .hero-card{
+    position:relative;
+    z-index:5;
+    background:rgba(20,23,15,.88);
+    border:1px solid rgba(200,162,90,.25);
+    border-radius:22px;
+    backdrop-filter:blur(14px);
+    padding:32px 28px;
+    width:100%;
+    max-width:280px;
     text-align:center;
-    display:flex; flex-direction:column; align-items:center; gap:8px;
+    box-shadow:0 20px 60px rgba(0,0,0,.5);
   }
-  .hero-label{
-    font-size:10px; letter-spacing:.1em; color:var(--brass);
+
+  .hero-eyebrow{
+    font-size:9px; letter-spacing:.16em; color:var(--brass);
     text-transform:uppercase;
+    margin-bottom:16px;
   }
-  .hero-dot{ width:4px; height:4px; border-radius:50%; background:var(--brass); }
+
   .hero-avatar{
-    width:120px; height:120px; border-radius:50%;
+    width:88px; height:88px;
+    border-radius:50%;
     border:2px solid var(--brass);
     padding:2px;
-    margin-bottom:4px;
+    margin:0 auto 16px;
   }
-  .hero-avatar img{ width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; }
+  .hero-avatar img{ 
+    width:100%; height:100%;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+  }
 
-  .identity{ text-align:center; margin-top:80px; }
+  .identity{ text-align:center; }
   h1{
     font-family:'Bebas Neue', sans-serif;
-    font-size:32px;
-    letter-spacing:.03em;
+    font-size:38px;
+    letter-spacing:.02em;
     line-height:1.1;
+    color:#FFF;
+    text-shadow:0 4px 12px rgba(0,0,0,.5);
   }
   .role{
-    font-size:12px; color:var(--brass);
-    letter-spacing:.05em;
-    margin-top:6px;
+    font-size:11px; color:var(--brass);
+    letter-spacing:.08em;
+    margin-top:8px;
     text-transform:uppercase;
   }
+
+  /* BIO ABAIXO DO HERO */
   .bio{
-    font-size:12.5px; line-height:1.65; color:var(--ink-dim);
-    max-width:330px; margin:16px auto 0;
+    font-size:12.5px; line-height:1.7; color:var(--ink-dim);
+    max-width:360px; margin:28px auto 0;
+    text-align:center;
   }
 
   .section-label{
     font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
     color:var(--ink-dim);
-    margin:26px 0 12px 2px;
+    margin:32px 0 14px 2px;
   }
 
+  /* BOTÕES COM ÍCONE E ANIMAÇÃO FAROL */
   .links{ display:flex; flex-direction:column; gap:12px; }
   a.link{
     display:flex; align-items:center; justify-content:space-between;
@@ -192,7 +202,7 @@
   }
 
   .method{
-    margin-top:30px;
+    margin-top:32px;
     text-align:center;
     padding:16px;
     border-top:1px solid var(--line);
@@ -213,27 +223,25 @@
 
   <div class="eyebrow"><span class="bar"></span> CONSULTOR · PALESTRANTE · MENTOR <span class="bar"></span></div>
 
-  <div class="video-section">
-    <div class="video-frame">
-      <span class="video-tag">● Apresentação</span>
-      <video src="profluiz-video.mp4" autoplay loop muted playsinline controls preload="auto"></video>
-    </div>
+  <!-- HERO COM VÍDEO DE FUNDO -->
+  <div class="hero">
+    <video src="profluiz-video.mp4" autoplay loop muted playsinline preload="auto"></video>
     
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <span class="hero-label">// BIO OFICIAL</span>
-        <span class="hero-dot"></span>
-        <div class="hero-avatar"><img src="avatar.png" alt="Prof. Dr. Luiz Júnior"></div>
+    <!-- CARD DE IDENTIDADE -->
+    <div class="hero-card">
+      <div class="hero-eyebrow">// BIO OFICIAL</div>
+      <div class="hero-avatar"><img src="avatar.png" alt="Prof. Dr. Luiz Júnior"></div>
+      <div class="identity">
+        <h1>PROF. DR. LUIZ JÚNIOR</h1>
+        <div class="role">Consultoria em Educação Física Aplicada</div>
       </div>
     </div>
   </div>
 
-  <div class="identity">
-    <h1>PROF. DR. LUIZ JÚNIOR</h1>
-    <div class="role">Consultoria em Educação Física Aplicada</div>
-    <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas. Consultoria, palestras corporativas e mentoria com o Método APEE Fitness®.</p>
-  </div>
+  <!-- BIO ABAIXO -->
+  <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas. Consultoria, palestras corporativas e mentoria com o Método APEE Fitness®.</p>
 
+  <!-- BOTÕES -->
   <div class="section-label">Fale com o time</div>
   <div class="links">
     <a class="link primary" href="https://wa.me/5588999625027?text=Ol%C3%A1%2C%20quero%20falar%20com%20o%20especialista." target="_blank" rel="noopener">
