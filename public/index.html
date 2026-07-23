@@ -64,36 +64,51 @@
     z-index:2;
   }
 
+  /* Card com nome e cargo */
+  .name-card{
+    background:rgba(20,23,15,.6);
+    border:1px solid rgba(200,162,90,.3);
+    border-radius:24px;
+    padding:32px 28px;
+    backdrop-filter:blur(16px);
+    box-shadow:0 16px 48px rgba(0,0,0,.4);
+    margin-bottom:24px;
+  }
+
   /* 4. FOTO + NOME */
   .avatar{
-    width:100px; height:100px;
+    width:88px; height:88px;
     border-radius:50%;
-    margin:0 auto 24px;
-    border:3px solid var(--brass);
+    margin:0 auto 20px;
+    border:2.5px solid var(--brass);
     overflow:hidden;
-    box-shadow:0 12px 40px rgba(200,162,90,.2);
+    box-shadow:0 8px 24px rgba(200,162,90,.25);
   }
   .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
 
   h1{
     font-family:'Bebas Neue', sans-serif;
-    font-size:44px;
+    font-size:42px;
     letter-spacing:.01em;
     line-height:1.1;
-    background:linear-gradient(180deg, #F2F1EA 0%, #C8A24A 50%, #8C9182 100%);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
-    margin-bottom:12px;
-    text-shadow:0 2px 8px rgba(0,0,0,.4);
+    color:#FFF;
+    margin-bottom:8px;
+  }
+
+  /* Divider */
+  .name-divider{
+    width:36px;
+    height:2px;
+    background:var(--brass);
+    margin:12px auto;
   }
 
   /* 5. CARGO */
   .role{
-    font-size:12px; color:var(--brass);
-    letter-spacing:.06em;
+    font-size:11px; color:var(--ink-dim);
+    letter-spacing:.08em;
     text-transform:uppercase;
-    margin-bottom:20px;
+    margin-bottom:0;
   }
 
   /* 6. BIO */
@@ -214,9 +229,14 @@
     
     <!-- 3. HERO CARD — foto + nome + cargo + bio -->
     <div class="hero-card">
-      <div class="avatar"><img src="avatar.png" alt="Prof. Dr. Luiz Júnior"></div>
-      <h1>DR. LUIZ JÚNIOR</h1>
-      <div class="role">Consultoria em Educação Física Aplicada</div>
+      <!-- CARD COM NOME E CARGO -->
+      <div class="name-card">
+        <div class="avatar"><img src="avatar.png" alt="Prof. Dr. Luiz Júnior"></div>
+        <h1>DR. LUIZ JÚNIOR</h1>
+        <div class="name-divider"></div>
+        <div class="role">Consultoria em Educação Física Aplicada</div>
+      </div>
+      <!-- BIO EMBAIXO -->
       <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas. Consultoria, palestras corporativas e mentoria com o Método APEE Fitness®.</p>
     </div>
   </div>
