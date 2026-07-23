@@ -70,46 +70,52 @@
     background:rgba(20,23,15,.6);
     border:1px solid rgba(200,162,90,.3);
     border-radius:24px;
-    padding:32px 28px;
+    padding:40px 32px;
     backdrop-filter:blur(16px);
     box-shadow:0 16px 48px rgba(0,0,0,.4);
-    margin-bottom:24px;
+    margin-bottom:28px;
+    text-align:center;
   }
 
   /* 4. FOTO + NOME */
   .avatar{
-    width:88px; height:88px;
-    border-radius:50%;
-    margin:0 auto 20px;
-    border:2.5px solid var(--brass);
-    overflow:hidden;
-    box-shadow:0 8px 24px rgba(200,162,90,.25);
+    width:0; height:0;
+    display:none;
   }
-  .avatar img{ width:100%; height:100%; object-fit:cover; display:block; }
 
   h1{
     font-family:'Bebas Neue', sans-serif;
-    font-size:42px;
-    letter-spacing:.01em;
+    font-size:48px;
+    letter-spacing:.04em;
     line-height:1.1;
     color:#FFF;
-    margin-bottom:8px;
+    margin-bottom:20px;
+    font-weight:700;
   }
 
-  /* Divider */
+  /* Divider premium */
   .name-divider{
-    width:36px;
-    height:2px;
-    background:var(--brass);
-    margin:12px auto;
+    width:48px;
+    height:2.5px;
+    background:linear-gradient(90deg, rgba(200,162,90,0), var(--brass), rgba(200,162,90,0));
+    margin:20px auto;
   }
 
-  /* 5. CARGO */
+  /* 5. CARGO + MÉTODO */
   .role{
     font-size:11px; color:var(--ink-dim);
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    margin-bottom:12px;
+    line-height:1.8;
+  }
+
+  .method-badge{
+    display:inline-block;
+    font-size:10px;
+    color:var(--brass);
     letter-spacing:.08em;
     text-transform:uppercase;
-    margin-bottom:0;
   }
 
   /* 6. BIO */
@@ -233,13 +239,12 @@
   <div class="hero-card">
     <!-- CARD COM NOME E CARGO -->
     <div class="name-card">
-      <div class="avatar"><img src="avatar.png" alt="Prof. Dr. Luiz Júnior"></div>
-      <h1>LUIZ JÚNIOR</h1>
+      <h1>DR. LUIZ JÚNIOR</h1>
       <div class="name-divider"></div>
-      <div class="role">Consultoria em Educação Física Aplicada</div>
+      <div class="role">CONSULTORIA EM EDUCAÇÃO FÍSICA APLICADA<br><span class="method-badge">| MÉTODO APEE FITNESS® |</span></div>
     </div>
     <!-- BIO EMBAIXO -->
-    <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas. Consultoria, palestras corporativas e mentoria com o Método APEE Fitness®.</p>
+    <p class="bio">Transformo equipes de academias em máquinas de retenção e vendas com o Método APEE Fitness®. Consultoria, palestras corporativas e mentoria.</p>
   </div>
 
   <!-- 7. ÁREA DOS BOTÕES -->
